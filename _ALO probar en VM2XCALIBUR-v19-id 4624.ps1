@@ -9,7 +9,7 @@
 $x = 0
 $result = Get-EventLog -LogName Security -InstanceId 4624 |
    ForEach-Object {
-          while ($x -lt 1000)
+          while ($x -lt 10000)
         {
      [PSCustomObject]@{
      Time = $_.TimeGenerated
