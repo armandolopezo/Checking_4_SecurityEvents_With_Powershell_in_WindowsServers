@@ -3,7 +3,7 @@ write-host " imprimir resultado de metodo COUNT para variable RESULT que tiene l
 $result.count
 start-sleep -seconds 5
 $result[0] | fl *
-# write-host " ############################################################################################ "
+# write-host " ############################################################################################  "
 start-sleep -seconds 15
 
 $result = Get-EventLog -LogName Security -InstanceId 4624 |
