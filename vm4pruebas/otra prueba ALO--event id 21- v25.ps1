@@ -1,0 +1,3 @@
+﻿# Get-WinEvent -LogName Microsoft-Windows-TerminalServices-LocalSessionManager/Operational -FilterXPath "*[System[EventID=21]]" | Select-Object TimeCreated, message|fl |more
+Get-WinEvent -LogName Microsoft-Windows-TerminalServices-LocalSessionManager/Operational -FilterXPath "*[System[EventID=21]]" | Get-Member
+Get-WinEvent -LogName Microsoft-Windows-TerminalServices-LocalSessionManager/Operational -FilterXPath "*[System[EventID=21]]" | Select-Object TimeCreated, message
