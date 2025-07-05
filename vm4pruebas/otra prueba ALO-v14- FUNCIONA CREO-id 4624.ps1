@@ -9,4 +9,4 @@
      }
    }
 
-# $result | Select-Object Time, Machine, User, Access, SourceAddr |  Export-Csv -NoTypeInformation -Path c:\soporte\Access_Log.csv
+$result | Select-Object Time, Machine, User, Access, SourceAddr |  Export-Csv -NoTypeInformation -Path c:\soporte\Access_Log.csv

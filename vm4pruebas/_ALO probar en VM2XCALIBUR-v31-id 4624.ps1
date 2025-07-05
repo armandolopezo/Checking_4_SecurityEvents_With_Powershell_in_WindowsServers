@@ -17,7 +17,7 @@ for ($x = 0; $x -lt 100; $x = $x + 1) {
             if ($TestAddr -eq ("::1")) { }
             elseif ($TestAddr -eq ("-")) { }
             else             {
-                write-host "EL IF de direcciones a descartar resulto negativo "
+                # write-host "EL IF de direcciones a descartar resulto negativo "
                 [PSCustomObject]@{
                 Time = $event.TimeGenerated
                 Machine = $event.ReplacementStrings[6]
@@ -26,25 +26,25 @@ for ($x = 0; $x -lt 100; $x = $x + 1) {
                 SourceAddr = $event.ReplacementStrings[18]
                                 }
                 $y=$x+1
-                write-host " ************************************************************************************************************************* "
-                write-host " Número de eventos PROCESADOS = $y "
-                write-host  "Time = " $event.TimeGenerated
-                write-host  "Machine = " $event.ReplacementStrings[6]
-                write-host  "User = " $event.ReplacementStrings[5]
-                write-host  "Access = " $event.ReplacementStrings[10]
-                write-host  "SourceAddr = " $event.ReplacementStrings[18]
-                write-host  " "
-                #  write-host  " result array iterative object = " $event
+                # write-host " ************************************************************************************************************************* "
+                # write-host " Número de eventos PROCESADOS = $y "
+                # write-host  "Time = " $event.TimeGenerated
+                # write-host  "Machine = " $event.ReplacementStrings[6]
+                # write-host  "User = " $event.ReplacementStrings[5]
+                # write-host  "Access = " $event.ReplacementStrings[10]
+                # write-host  "SourceAddr = " $event.ReplacementStrings[18]
+                # write-host  " "
+                # write-host  " result array iterative object = " $event
                                 }
                              }
             
     
-## $SourceIpAddresses=$result | Select-Object SourceAddr
+$SourceIpAddresses=$event | Select-Object SourceAddr
 # $SourceIpAddresses|get-member
-## $SourceIPgroup= $SourceIpAddresses| group-object -Property SourceAddr
-#$SourceIPgroup
+$SourceIPgroup = $SourceIpAddresses| group-object -Property SourceAddr
+write-host $SourceIPgroup
 
-# $SourceIPgroup.group
+$SourceIPgroup.group
 ## $SourceIPgroup|Get-Member
-## $SourceIPgroup|select-object count,name,group,values|ft
-## $SourceIPgroup|select-object count,name,Values
+$SourceIPgroup|select-object count,name,group,values|ft
+$SourceIPgroup|select-object count,name,Values
