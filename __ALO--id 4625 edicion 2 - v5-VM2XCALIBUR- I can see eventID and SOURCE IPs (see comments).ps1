@@ -1,7 +1,8 @@
 ﻿# $NewArrayList = @() ; $FilteredArray = @() ; $z = 0 ; $FilteredArray += "-"
 $NewArrayList = @()  
 $z = 0  
-$FilteredArray = @(1..1000000)
+# I changed to following command to use an array of 100 values instead an array of 1.000.000 values (TOO SLOW)   (7-7-2025)
+$FilteredArray = @(1..100)
 # $FilteredArray[0] = "-"  # Esto es para inicializar el primer elemento del arreglo que se creó VACIO.
 # $FilteredArray[0]
 # write-host "Lo anterior es el valor de FilteredArray[0] "
@@ -207,19 +208,23 @@ For ($x = 0; $x -lt $ArrayMaximumSize; $x = $x + 1)
 write-host "variable z es: $z"
 
 # the following line is the third array for valid ip addresses, avoiding "-", "::1" and "127.0.0.1" addresses.
-$results3 = 1..$z | ForEach-Object { "1" } 
+
+# I commented following line because it is not necessary (7-7-2025)
+# $results3 = 1..$z | ForEach-Object { "1" } 
 
 # following line prints a sequence of "1".
 # write-host "Results3 array print:  $results3"
 
-for ($y2 = 0; $y2 -lt $z; $y2 = $y2 + 1)  {
-    $results3[$y2] =  $FilteredArray[$y2]
+# I commented following line because it is not necessary (7-7-2025)
+# for ($y2 = 0; $y2 -lt $z; $y2 = $y2 + 1)  {
+    # I commented the following line thtat gives problems with array RESULT3 and also RESULT3 is not needed and I can use array called FILTEREDARRAY (7-7-2025)
+    # $results3[$y2] =  $FilteredArray[$y2]
     # write-host  $results3[$y2]  
     # write-host "Y2 counter $y2"
-    }
+    # }
 
-   
-$SourceIpAddresses=$results3 | Select-Object SourceAddr
+# I replaced array RESULT3 by array FILTEREDARRAY in the following line (7-7-2025)
+$SourceIpAddresses=$FilteredArray | Select-Object SourceAddr
 # The following line can show the processed IP ADDRESS IN THE EVENT
 # $SourceIpAddresses
 # $SourceIpAddresses|get-member
