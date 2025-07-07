@@ -10,7 +10,13 @@ $FilteredArray = @(1..100)
 write-host " Por favor espere unos segundos hasta QUE SE CUENTEN EL TOTAL DE EVENTOS A ANALIZAR "
 
 # I replaced INSTANCEID in the following line changing 4625 for 4778 in order to begin to test scripts for event id 4778 in security log
-$result = Get-EventLog -LogName Security -InstanceId 4778
+# $result = Get-EventLog -LogName Security -InstanceId 4778
+# The previous line did not work for event 4778 and I commented it (7-7-2025)
+
+$result = Get-WinEvent -FilterHashTable @{
+    Logname='Security'
+    ID=4625
+} | Select-Object *
 
 # if I exectute the following command I can verify the entries with INSTANCE ID 25 = EVENT ID 25
 $result | Format-List ; write-host "*********************************************************************************************************** "
