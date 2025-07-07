@@ -132,7 +132,7 @@ For ($x = 0; $x -lt $ArrayMaximumSize; $x = $x + 1)
                 Machine = $eventfiltered.ReplacementStrings[6]
                 User = $eventfiltered.ReplacementStrings[5]
                 Access = $eventfiltered.ReplacementStrings[10]
-                SourceAddr = $eventfiltered.ReplacementStrings[12]
+                SourceAddr = $eventfiltered.ReplacementStrings[19]
                 field1 = $eventfiltered.ReplacementStrings[1]
                 field2 = $eventfiltered.ReplacementStrings[2]
                 field3 = $eventfiltered.ReplacementStrings[3]
