@@ -105,6 +105,7 @@ For ($x = 0; $x -lt $ArrayMaximumSize; $x = $x + 1)
      if ($TestAddr -eq ("::1"))   {  }
      elseif ($TestAddr -eq ("-")) {  }
      # I added the following line to also discard ip address: 127.0.0.1 (7-7-2025)
+       elseif ($TestAddr -eq ("127.0.0.1")) {  }
      else
       {
      # write-host "EL resultado de IF con resultado negativo (else) despues de descartar direcciones IP que no son de interes  "
