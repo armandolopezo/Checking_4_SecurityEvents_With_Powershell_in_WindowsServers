@@ -1,4 +1,4 @@
-﻿$result = Get-EventLog -LogName Security -InstanceId 4624 |
+$result = Get-EventLog -LogName Security -InstanceId 4624 |
    ForEach-Object {
      [PSCustomObject]@{
      Time = $_.TimeGenerated
