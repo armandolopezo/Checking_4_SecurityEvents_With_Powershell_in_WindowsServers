@@ -1,0 +1,1 @@
+﻿Get-WinEvent -LogName Microsoft-Windows-TerminalServices-LocalSessionManager/Operational -FilterXPath "*[System[EventID=21]]" | Select-Object TimeCreated, Message, LevelDisplayName, ProviderName|fl |more
